@@ -1,0 +1,153 @@
+2021-05-21  Sauro Menna  <smenna@users.sourceforge.net>
+    * Fix problem in INCLUDE/OMIT condition
+    * Fix script to compile parser/scanner
+    * Exit routine E15 - E35
+    * E15 - E35 routine for file fixed / variable length
+    * New source COBOL for test exit routines E15 and E35
+    * Test Case for Routine E15 and E35
+    * New OPTION Y2PAST (YY) - Sliding, (YYYY) century fixed
+    * FORMAT Date : Y2B,Y2C,Y2D,Y2P,Y2S,Y2T2,Y2T3,Y2T4,Y2T5,Y2T6,Y2T8,Y2U,Y2V,Y2X,Y2Y,Y2Z
+    * New format FIELD=COPY  for E15/E35 routines
+    * Test Case for Date format
+
+2021-02-01  Sauro Menna  <smenna@users.sourceforge.net>
+    * Check LIBCOB version (__LIBCOB_VERSION) for variables of cob_modules
+    * Management of warning codes (New value 4 for Warning, like DFSORT)
+    * Changes to improve performance
+    * Review position of parser.y and scanner.l files
+    * Modified MAKEFILE project
+    * Updated test COBOL programs (tests/src) 
+    
+2021-01-14  Sauro Menna  <smenna@users.sourceforge.net>
+    * Fix problems with Temporary Files
+    * New module to verify result of sort (tests/src)
+2021-01-08  Sauro Menna  <smenna@users.sourceforge.net>
+    * New option OUTREC OVERLAY 
+    * Fix problems in MinGW enviro nment
+    * Review of test suite (folder tests) 
+    * Fix problem in OUTREC
+    * Changed Makefile to compile source and not generate parser/scanner
+2020-12-28  Sauro Menna  <smenna@users.sourceforge.net>
+	* New option INREC OVERLAY 
+    * Fix problem in gcc compiler environment
+    * Review of the configuration of the parser source
+      New folder parser. Modified Makefile.
+2020-10-15  Sauro Menna  <smenna@users.sourceforge.net>
+	* gcsort.c - new option for sign EBCDIC (-fsign=EBCDIC)
+    * gcsort.h - 
+    * gcsorthelp.c - Review Help for new option
+    * job.c - new option for sign EBCDIC (-fsign=EBCDIC)
+    * utils - new option for sign EBCDIC (-fsign=EBCDIC)
+    * doc\GCSORT1_0_V01.pdf - review for new option
+    * doc\GCSORT1_0_V01.odt - review for new option
+2020-02-05  Sergey Kashyrin <ska@kiska.net>
+	* job.c - fixing small SIGSEGV bug in sort_temp_name for Linux
+2019-03-05  Sauro Menna  <smenna@users.sourceforge.net>
+    * job.c - job_set_area (Error in function name)
+    * test environment : .. gcsort -> tests -> src
+           somisqf12b.cbl, sfrmsqf18b.cbl soutfsqf02b2.cbl
+           soutfsqf02b1.cbl, somisqf13b.cbl, soutfsqf02b3.cbl
+           somisqf11b.cbl, somisqf09b.cbl
+    * Make file for MinGW/MSYS
+    * INSTALL File modified for MinGW/MSYS environment
+    * libgcsort.h : define MinGW environment    
+2017-05-11  Sauro Menna  <smenna@users.sourceforge.net>
+    * job.c - Padding text file
+2017-01-15  Sauro Menna  <smenna@users.sourceforge.net>
+
+    * Review test environment (tests folder)
+      Created cobol program to setup environment (gctestsetup.cbl)
+      and cobol program to execute test cases (gctestrun)
+      This modules can be executed in Linux and Windows environment
+    * README.txt (build_windows) updated for VStudio settings
+    * Created makedist.bat dor dist Windows environment
+    * Insert GCSORT1_0_V01.odt in doc folder
+
+2016-12-13  Simon 'sf-mensch/human' Sobisch <simonsobisch@gnu.org>
+
+	* general: changed package name to GCSORT and renamed
+	  all files from ocsort -> gcsort in behalf of Sauro Menna
+
+2016-11-12  Sauro Menna  <smenna@users.sourceforge.net>
+
+	* Update Version 1.0.0 - by Sauro Menna 
+    * New Conditional field  SS = SubString for INCLUDE/OMIT statement
+       INCLUDE COND=(1,55,SS,EQ,C'SearchString') 
+            - Search 'SearchString' in record area from pos 1 for len 55.
+       INCLUDE COND=(25,5,SS,EQ,C'Str1 ,Str2 ,Str3 , Str4, Str5') 
+            - Check if field in position 25 for len 5 is equal one of following value
+                    'Str10,Str20,Str30,Str40,Str50'
+    * Insert Cobol module and scripts in tests folder
+    
+2016-10-23  Sauro Menna  <smenna@users.sourceforge.net>
+
+	* Update Version 1.0.0 - by Sauro Menna 
+    * Used fields COB_FIELD for data type and integration with LIBCOB:
+        fields         = cob_field/cob_attribute
+        i/o operations = cob_open, cob_read, cob_write, cob_close, 
+        compare/move   = cob_cmp_llint, cob_cmp, cob_move
+    * Removed bufferedreader and bufferedwriter modules
+    * Change memory mapped files use. Only for temporary files. 
+    * Checked potential errors problems for the allocation memory 
+    * Included new file type INDEXED (keys definition)
+    * Included new file type RELATIVE (key relative)
+    * Errors code review 
+    * Insert details for Parser/Scanner errors 
+    * Review Help (ocosort --help)
+    * outfile.c  Insert option SPLITBY=nn for OUTFIL
+    * Included new data type
+          in addition to these:
+              CH  Char     BI  Unisgned Binary   FI  Signed Binary
+              PD  Packed   ZD  Zoned decimal
+          added:    
+              FL   Floating Point
+              CLO  Signed Numeric - sign lealing 
+              CST  Signed Numeric - trailing separate sign
+              CSL  Signed Numeric - leading separate sign
+              CSF  Signed Numeric - with optional leading floating sign 
+    * Create test environment with COBOL programs (folder test)
+      Integrated step to generate files, sort (gcsort and Cobol) and check results
+      Windows and Linux environment.      
+    * Command TAKE case insensitive    
+    * Check instruction for KEY definition
+
+2016-03-26  Sauro Menna  <smenna@users.sourceforge.net>
+
+	* Update Version 1.0.0 - by Sauro Menna 
+    * FIX : printf rows file TAKE (last characters)
+
+2016-02-28  Sauro Menna  <smenna@users.sourceforge.net>
+
+	* Update Version 1.0.0 - by Sauro Menna 
+    * Enabled case insensitive for all commands and statements
+    * Insert build_windows for vc10 and vc 14
+    * FIX : warnings for vc14
+
+2016-02-11  Sauro Menna  <smenna@users.sourceforge.net>
+
+	* Released OCSORT User's Guide  (in doc folder)
+	* Update Version 1.0.0 - by Sauro Menna 
+    * Enabled project in Linux Environment 
+    * Disable MF file handler
+    * FIX : INLINE macro [Problem in Ubuntu environment]
+            SumField - Fix Update Record - ZD (Zoned)
+            Sort Field - Fix Sort Key - BI (Binary)
+
+2015-12-01  Sauro Menna  <smenna@users.sourceforge.net>
+
+	* Version 1.0.0 released.
+    New features:
+    1) Dynamic Memory Allocation for operations
+    2) Temporary files for sorting Big File > 2GByte
+    3) Merge files (max 16 files)
+    4) Read and write Line Sequential (LS) and Sequential Variable
+    5) Statistics and error message
+    6) Data type. New FI (Binary unsigned), PD (Packed) and ZD (Zoned - max 18 digits)
+    7) Reader and writer buffered
+    8) Memory Mapped Files for fast read files
+    9) Environment Variable -
+        - Folder for Temporary files,
+        - Check the command line (NO Operations)
+        - Memory Allocation for Variable FNAME / FILES in OUTFIL
+        - Statistics Details
+    10) File conversion Fix from/to Variable or LS from/to SQ
