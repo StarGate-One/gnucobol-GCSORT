@@ -10,11 +10,14 @@ echo %cmd_Configuration% %cmd_OutDir%
 echo xcopy /d /f /h /i /r /v /y "..\..\..\vbisam-2.0.1\_build_windows_vs16\x64\Release\vbisam.*" "%cmd_OutDir%"
 xcopy /d /f /h /i /r /v /y "..\..\..\vbisam-2.0.1\_build_windows_vs16\x64\Release\vbisam.*" "%cmd_OutDir%"
 
-echo xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\cjson.*" "%cmd_OutDir%"
-xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\cjson.*" "%cmd_OutDir%"
+echo xcopy /d /f /h /i /r /v /y "..\..\..\gnucobol-3.2-dev_win\build_windows\x64\%cmd_Configuration%\libcob.*" "%cmd_OutDir%"
+xcopy /d /f /h /i /r /v /y "..\..\..\gnucobol-3.2-dev_win\build_windows\x64\%cmd_Configuration%\libcob.*" "%cmd_OutDir%"
 
 echo xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\charset-1.*" "%cmd_OutDir%"
 xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\charset-1.*" "%cmd_OutDir%"
+
+echo xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\cjson.*" "%cmd_OutDir%"
+xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\cjson.*" "%cmd_OutDir%"
 
 echo xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\iconv-2.*" "%cmd_OutDir%"
 xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\iconv-2.*" "%cmd_OutDir%"
@@ -45,11 +48,14 @@ echo %cmd_Configuration% %cmd_OutDir%
 echo xcopy /d /f /h /i /r /v /y "..\..\..\vbisam-2.0.1\_build_windows_vs16\x64\Release\vbisam.*" "%cmd_OutDir%"
 xcopy /d /f /h /i /r /v /y "..\..\..\vbisam-2.0.1\_build_windows_vs16\x64\Release\vbisam.*" "%cmd_OutDir%"
 
-echo xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\cjson.*" "%cmd_OutDir%"
-xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\cjson.*" "%cmd_OutDir%"
+echo xcopy /d /f /h /i /r /v /y "..\..\..\gnucobol-3.2-dev_win\build_windows\x64\%cmd_Configuration%\libcob.*" "%cmd_OutDir%"
+xcopy /d /f /h /i /r /v /y "..\..\..\gnucobol-3.2-dev_win\build_windows\x64\%cmd_Configuration%\libcob.*" "%cmd_OutDir%"
 
 echo xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\charset-1.*" "%cmd_OutDir%"
 xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\charset-1.*" "%cmd_OutDir%"
+
+echo xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\cjson.*" "%cmd_OutDir%"
+xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\cjson.*" "%cmd_OutDir%"
 
 echo xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\iconv-2.*" "%cmd_OutDir%"
 xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\iconv-2.*" "%cmd_OutDir%"
@@ -71,6 +77,8 @@ xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\pdcurses.*" 
 
 echo xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\zlib*.*" "%cmd_OutDir%"
 xcopy /d /f /h /i /r /v /y "..\..\..\_vcpkg\%cmd_Configuration%\bin\zlib*.*" "%cmd_OutDir%"
+
+goto :end
 
 :end
 endlocal
